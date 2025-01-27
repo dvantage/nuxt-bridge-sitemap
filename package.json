@@ -1,6 +1,6 @@
 {
-  "name": "@nuxtjs/sitemap",
-  "version": "2.4.0",
+  "name": "@dvantage/nuxt-bridge-sitemap",
+  "version": "0.0.1",
   "description": "Automatically generate or serve dynamic sitemap.xml for Nuxt projects",
   "keywords": [
     "nuxt",
@@ -19,6 +19,9 @@
     },
     {
       "name": "Pooya Parsa"
+    },
+    {
+      "name": "Vladimir Dorogov"
     }
   ],
   "files": [
@@ -26,10 +29,10 @@
   ],
   "main": "lib/module.js",
   "scripts": {
-    "build": "nuxt build test/fixture",
-    "dev": "nuxt test/fixture",
+    "build": "nuxt2 build test/fixture",
+    "dev": "nuxi dev test/fixture",
     "format": "yarn lint --fix",
-    "generate": "nuxt generate test/fixture",
+    "generate": "nuxi generate test/fixture",
     "lint": "eslint . --ext js,vue",
     "preview": "standard-version --dry-run",
     "release": "standard-version && git push --follow-tags && npm publish",
@@ -40,8 +43,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn test"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
@@ -55,15 +57,18 @@
     "etag": "^1.8.1",
     "fresh": "^0.5.2",
     "fs-extra": "^8.1.0",
+    "h3": "^1.14.0",
+    "ioredis": "^5.4.2",
     "is-https": "^2.0.2",
     "lodash.unionby": "^4.8.0",
-    "minimatch": "^3.0.4",
+    "minimatch": "3.0.5",
     "sitemap": "^4.1.1"
   },
   "devDependencies": {
     "@babel/runtime-corejs2": "latest",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
+    "@nuxt/bridge": "^3.4.0",
     "@nuxtjs/eslint-config": "latest",
     "codecov": "latest",
     "eslint": "latest",
@@ -72,15 +77,16 @@
     "husky": "latest",
     "jest": "latest",
     "lint-staged": "latest",
-    "node-fetch": "latest",
-    "nuxt": "latest",
+    "node-fetch": "3.2.10",
+    "nuxi": "^3.20.0",
+    "nuxt": "2.18.1",
     "nuxt-i18n": "latest",
     "prettier": "latest",
     "standard-version": "latest"
   },
   "engines": {
-    "node": ">=8.9.0",
-    "npm": ">=5.0.0"
+    "node": ">=18.20.0",
+    "npm": ">=10.0.0"
   },
   "publishConfig": {
     "access": "public"
