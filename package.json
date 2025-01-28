@@ -1,6 +1,6 @@
 {
   "name": "@dvantage/nuxt-bridge-sitemap",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Automatically generate or serve dynamic sitemap.xml for Nuxt projects",
   "keywords": [
     "nuxt",
@@ -29,7 +29,7 @@
   ],
   "main": "lib/module.js",
   "scripts": {
-    "build": "nuxt2 build test/fixture",
+    "build": "nuxi build test/fixture",
     "dev": "nuxi dev test/fixture",
     "format": "yarn lint --fix",
     "generate": "nuxi generate test/fixture",
